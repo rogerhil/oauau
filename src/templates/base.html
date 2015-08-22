@@ -1,0 +1,82 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+    <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Flavia Bernardes">
+
+        <!-- pinterest -->
+        <meta name="p:domain_verify" content="0abc82f2a4e2d934f1b07766abce62ee"/>
+        <!-- end pinterest -->
+
+        <title>O au au por Flavia Bernardes</title>
+        <meta property="og:title" content="O au au por Flavia Bernardes" />
+        <meta property="og:description" content="" />
+        <meta property="og:type" content="text/html" />
+        <meta property="og:url" content="http://www.oauau.com.br/auau/" />
+        <meta property="og:image" content="http://www.oauau.com.br{% static 'img/auau125x125.jpg' %}" />
+
+        <!-- Bootstrap Core CSS -->
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+        <!-- other CSS -->
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+        <link href="{% static 'css/flavia1.css' %}" rel="stylesheet">
+        {% block extracss %}
+        {% endblock %}
+
+        <!-- IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+
+    <body>
+        <div id="cover">
+            <img src="{% static 'img/ajax-loader.png' %}" class="ajax-loader">
+        </div>
+        {% block site %}
+            <div id="site">
+                <header>
+                    {% block header %}
+                    {% endblock %}
+                </header>
+                <div class="clear"></div>
+                <section id="container">
+                    {% block container %}
+                    {% endblock %}
+                </section>
+                <div class="clear"></div>
+                <footer>
+                    {% block footer %}
+                        <div class="">
+                            <p>
+                                {% with '64' as size %}
+                                    {% include 'social.html' %}
+                                {% endwith %}
+                            </p>
+                        </div>
+                        <br>
+                        <p style="text-align: center;">
+                            <a href="http://www.oauau.com.br" target="_blank">www.oauau.com.br</a><br>
+                            &#9400 O au au, 2015. All rights reserved.
+                        </p>
+                    {% endblock %}
+                </footer>
+            </div>
+        {% endblock %}
+
+        <!-- jQuery -->
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        {% block bottomjs %}
+        {% endblock %}
+    </body>
+</html>

@@ -15,7 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.views.generic import TemplateView
+
+from .newsletter.views import WorkbookView, WorkbookConfirmationView
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^$', TemplateView.as_view(template_name="home.html"),
+        name='home'),
+    url(r'^livro-de-atividades/$', WorkbookView.as_view(), name='workbook'),
+    url(r'^livro-de-atividades/download/$', WorkbookConfirmationView.as_view(),
+        name='workbook_confirmation'),
+
 ]

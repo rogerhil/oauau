@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'oauau.newsletter',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -55,7 +56,7 @@ ROOT_URLCONF = 'oauau.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -100,3 +101,39 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "media"),
+)
+
+
+NEWSLETTER_NAME = 'O au au'
+
+MAILCHIMP_API_KEY = ''
+MAILCHIMP_NEWSLETTER_LIST_ID = '2172bebde9'
+MAILCHIMP_NEWSLETTER_LIST_NAME = NEWSLETTER_NAME
+
+MAILCHIMP_OAUAU_LIST_ID = '2172bebde9'
+MAILCHIMP_OAUAU_LIST_NAME = NEWSLETTER_NAME
+
+MADMIMI_USER = ''
+MADMIMI_API_KEY = ''
+MADMIMI_NEWSLETTER_LIST_ID = NEWSLETTER_NAME
+MADMIMI_NEWSLETTER_LIST_NAME = NEWSLETTER_NAME
+
+MADMIMI = 'madmimi'
+MAILCHIMP = 'mailchimp'
+
+CURRENT_EMAIL_MARKETING_PROVIDER = MADMIMI
+
+EMAIL_HOST = ""
+EMAIL_HOST_PASSWORD = ""
+EMAIL_HOST_USER = ""
+DEFAULT_FROM_EMAIL = "(Flavia Bernardes) " \
+                     "<flavia@flaviabernardesart.com>"
+
+try:
+    from .developmentsettings import *
+except ImportError:
+    from .productionsettings import *
