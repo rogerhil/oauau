@@ -1,29 +1,15 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
-{% block extracss %}
-    <style>
-        #form-subscriber input {
-            color: #000;
-            border-color: #000 !important;
-        }
-        #form-subscriber button {
-            background-color: #000 !important;
-            color: white;
-            border-color: #000 !important;
-        }
-    </style>
-{% endblock %}
-
 {% block container %}
     <div style="text-align: center;">
-        <div style="margin-bottom: 50px;">
-            <img src="{% static 'img/oauau-medium-transp.jpg' %}" >
+        <div style="margin-bottom: 50px; padding-top: 20px;">
+            <img src="{% static 'img/oauau-medium-transp-open.png' %}" id="oauau-image" />
         </div>
         <h1>Obrigada!</h1>
-        <p>
-            Clique abaixo para baixar o Livro de Atividades do <strong>au au</strong>.
-        </p>
+        <h3>
+            Clique abaixo para baixar o Livro de Atividades do au au.
+        </h3>
         <h3>
             <a href="{% static 'pdf/o au au livro de atividades.pdf' %}" target="_blank">
                 O au au - Livro de Atividades
@@ -31,4 +17,8 @@
         </h3>
         <br>
     </div>
+{% endblock %}
+
+{% block bottomjs %}
+    {% include "logo-animated.html" %}
 {% endblock %}

@@ -820,15 +820,7 @@ img.ajax-loader {
 }
 
 #oauau-image {
-    margin: 0 auto 50px auto;
-    width: 797px;
-    height: 382px;
-    background-image: url(../img/oauau-medium-transp.jpg);
-
-}
-
-#oauau-image:hover {
-    *background-image: url(../img/oauau-medium-transp.jpg);
+    cursor: pointer;
 }
 
 footer {

@@ -2,16 +2,29 @@
 {% load staticfiles %}
 
 {% block container %}
-    <div style="text-align: center; padding: 10px;">
-        <div style="margin-bottom: 50px;">
-            <img src="{% static 'img/oauau-medium-transp.jpg' %}" >
+    <div style="text-align: center;">
+        <div style="margin-bottom: 50px; padding-top: 20px;">
+            <img src="{% static 'img/oauau-medium-transp-open.png' %}" id="oauau-image" />
         </div>
         <br>
         <h1 class="special-title">
             <span class="special-title-bold">Em breve</span><br>
-            lançamento do livro do au au
         </h1>
+        <h2>lançamento do livro do au au</h2>
         <br>
         <br>
     </div>
+{% endblock %}
+
+{% block bottomjs %}
+    {% include "logo-animated.html" %}
+
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
+    <script type="text/javascript">stLight.options({publisher: "023fcf4a-4582-470d-8c44-a22303a1ce96", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+    <script>
+    var options={ "publisher": "023fcf4a-4582-470d-8c44-a22303a1ce96", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["facebook", "twitter", "googleplus", "pinterest", "email", "sharethis"]}};
+    var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
+    </script>
 {% endblock %}
