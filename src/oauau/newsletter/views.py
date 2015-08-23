@@ -50,6 +50,7 @@ class LandingPageView(NewsletterBaseView):
     form_class = LaunchSubscriberForm
     success_url = reverse_lazy("launch_confirmation")
     redirect_name = 'landing_page'
+    already_msg = "Você já está cadastrado(a)"
 
 
 class LaunchConfirmationView(NewsletterConfirmationBaseView):
