@@ -19,6 +19,20 @@
 }
 
 
+@font-face {
+	font-family: 'Amatic';
+	src: url('../font/AmaticSC-Regular.ttf');
+	src: local('../font/AmaticSC-Regular'), url('../font/AmaticSC-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'AmaticBold';
+	src: url('../font/Amatic-Bold.ttf');
+	src: local('../font/Amatic-Bold'), url('../font/Amatic-Bold.ttf') format('truetype');
+}
+
+
+
 
 
 html,
@@ -61,6 +75,29 @@ img {
 img:hover, img:focus {
     *opacity:0.8;
 }
+
+.special-title,
+.special-title-bold {
+    font-family: Amatic;
+    font-size: 80px;
+    line-height: 100px;
+    letter-spacing: 5px;
+    word-spacing: 20px;
+}
+
+.special-title-bold {
+    font-family: AmaticBold;
+}
+
+a.tiny-link {
+    font-size: 10pt;
+    color: #aaa;
+}
+
+a.tiny-link:hover {
+    color: #555;
+}
+
 
 h1, h2, h3, h4, h5, h6 {
     clear: both;
@@ -469,7 +506,7 @@ label {
 }
 
 .social-64 {
-    width: 336px;
+    width: 252px;
     margin: 0 auto;
 }
 
@@ -495,6 +532,15 @@ label {
     background: url(../img/social/instagram-64.png)
 }
 
+.social-64 li.youtube {
+    background: url(../img/social/youtube-64.png)
+}
+
+.social-64 li.gplus {
+    background: url(../img/social/gplus-64.png)
+}
+
+
 
 
 .social-32 {
@@ -509,19 +555,27 @@ label {
 }
 
 .social-32 li.facebook {
-    background: url(../img/social/facebook-32.png)
+    background: url(../img/social/facebook-32.png) !important;
 }
 
 .social-32 li.twitter {
-    background: url(../img/social/twitter-32.png)
+    background: url(../img/social/twitter-32.png) !important;
 }
 
 .social-32 li.pinterest {
-    background: url(../img/social/pinterest-32.png)
+    background: url(../img/social/pinterest-32.png) !important;
 }
 
 .social-32 li.instagram {
-    background: url(../img/social/instagram-32.png)
+    background: url(../img/social/instagram-32.png) !important;
+}
+
+.social-32 li.youtube {
+    background: url(../img/social/youtube-32.png) !important;
+}
+
+.social-32 li.gplus {
+    background: url(../img/social/gplus-32.png) !important;
 }
 
 
@@ -589,10 +643,12 @@ img.ajax-loader {
 
 #form-subscriber input {
     width: 50%;
-    color: #fff;
-    padding: 5px 20px;
+    color: #000;
+    font-weight: bold !important;
+    padding: 10px 20px;
     background: rgba(255,255,255,0.0);
-    border: 2px solid #fff;
+    border: 2px solid #000;
+    border-radius: 20px;
     margin-bottom: 20px;
 }
 
@@ -609,14 +665,21 @@ img.ajax-loader {
 
 #form-subscriber button {
     background: rgba(255,255,255,0.2);
-    border: 2px solid #fff;
-    padding: 0 20px;
+    padding: 10px 20px;
     width: 50%;
-    text-transform: uppercase;
+    text-transform: lowercase;
+    font-weight: bold;
+    border: 2px solid #000;
+    border-radius: 20px;
+    font-size: 24pt;
 }
 
 #form-subscriber button:hover {
-    background: rgba(255,255,255,0.4);
+    background: #000;
+    color: white;
+    -webkit-transition: all ease 1s;
+    -moz-transition: all ease 1s;
+    transition: all ease 1s;
 }
 
 .portfolio-item .portfolio-link {
@@ -769,10 +832,10 @@ img.ajax-loader {
 }
 
 footer {
-    background-color: #000;
+    *background-color: #000;
     *background-image: url(../img/black-dot.png);
-    color: #eee;
-    border-top: 1px solid #ccc;
+    color: #555;
+    border-top: 4px dashed #eee;
     width:100%;
 	height:300px;
 	position:absolute;
@@ -872,7 +935,7 @@ footer,
 @media (max-width: 500px) {
 
     .social-64 {
-        width: 208px;
+        width: 156px;
         margin: 0 auto;
     }
 
@@ -896,6 +959,14 @@ footer,
 
     .social-64 li.instagram {
         background: url(../img/social/instagram-32.png)
+    }
+
+    .social-64 li.youtube {
+        background: url(../img/social/youtube-32.png)
+    }
+
+    .social-64 li.gplus {
+        background: url(../img/social/gplus-32.png)
     }
 
     #form-subscriber input,
