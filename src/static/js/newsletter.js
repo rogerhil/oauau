@@ -3,7 +3,7 @@ $(window).load(function () {
         $('object').remove();
     }, 500);
 
-    $("#form-subscriber input[name=email]").focus();
+    //$("#form-subscriber input[name=email]").focus();
     $("#form-subscriber").submit(function (e) {
         e.preventDefault();
         var email = $(this).find('input[name=email]').val();
