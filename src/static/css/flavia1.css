@@ -619,7 +619,7 @@ img.ajax-loader {
 }
 
 .errorlist {
-    color: red;
+    color: #A50017;
     list-style: none;
     text-align: left;
     margin: 0;
@@ -635,10 +635,11 @@ img.ajax-loader {
 #form-subscriber .non-field-errors {
     width: 50%;
     color: white;
-    background-color: rgba(55,0,0,0.5);
+    background-color: #A50017;
     margin: 0 auto 20px auto;
     padding: 0;
     padding: 10px;
+    border-radius: 10px;
 }
 
 #form-subscriber input {
@@ -664,18 +665,20 @@ img.ajax-loader {
 
 
 #form-subscriber button {
-    background: rgba(255,255,255,0.2);
+    background: #aaa;
     padding: 10px 20px;
     width: 50%;
     text-transform: lowercase;
     font-weight: bold;
-    border: 2px solid #000;
+    border: 2px solid #aaa;
     border-radius: 20px;
     font-size: 24pt;
+    color: #fff;
 }
 
 #form-subscriber button:hover {
     background: #000;
+    border: 2px solid #000;
     color: white;
     -webkit-transition: all ease 1s;
     -moz-transition: all ease 1s;

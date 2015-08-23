@@ -3,18 +3,14 @@
 
 {% block container %}
     <div style="text-align: center;">
-        <div style="margin-bottom: 50px; padding-top: 20px;">
+        <div style="margin-bottom: 30px; padding-top: 20px;">
             <img src="{% static 'img/oauau-medium-transp-open.png' %}" id="oauau-image" />
         </div>
-        <br>
         <h1 class="special-title">
             <span class="special-title-bold">Em breve</span><br>
         </h1>
         <h2>lançamento do livro do au au</h2>
-        <br>
-        <br>
-
-        <p>Se inscreva abaixo para receber o livro do au au de graça assim que for lançado</p>
+        <h3>Se inscreva abaixo para receber o livro do au au grátis assim que for lançado.</h3>
         <form id="form-subscriber" action="{% url 'landing_page' %}" method="post">
             {% include "signup_form.html" %}
         </form>

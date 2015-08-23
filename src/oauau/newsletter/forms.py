@@ -62,8 +62,8 @@ class WorkbookSubscriberForm(BaseSubscriberForm):
     body = "Olá %s, \n\n" \
         "Clique no link abaixo para fazer o download do livro de atividades " \
         "do au au.\n\n" \
-        "Caso o link esteja inativo, copie e cole no seu browser.\n\n" \
         "%s\n\n" \
+        "Caso o link acima esteja inativo, copie e cole no seu browser.\n\n" \
         "Obrigada,\n\n" \
         "Flavia Bernardes e o au au"
 
@@ -80,6 +80,7 @@ class LaunchSubscriberForm(BaseSubscriberForm):
         "Confirme seu email clicando no link abaixo para ser o primeiro a " \
         "saber quando o livro do au au for lançado\n\n" \
         "%s\n\n"\
+        "Caso o link acima esteja inativo, copie e cole no seu browser.\n\n" \
         "Obrigada,\n\n" \
         "Flavia Bernardes e o au au"
 
