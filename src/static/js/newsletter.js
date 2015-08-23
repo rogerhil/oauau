@@ -26,7 +26,7 @@ $(window).load(function () {
                         $('#form-subscriber .errorlist').hide().slideDown();
                         $('#form-subscriber .non-field-errors').hide().slideDown();
                         if ($('#form-subscriber .non-field-errors').html()) {
-                            window.location = data.success_url + '?s=' + data.s;
+                            window.location = data.redirect_url + '?s=' + data.s;
                         }
                         return;
                     }
