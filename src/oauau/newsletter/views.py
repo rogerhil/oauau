@@ -59,7 +59,7 @@ class LaunchConfirmationView(NewsletterConfirmationBaseView):
 
 class WorkbookView(NewsletterBaseView):
     template_name = 'workbook/signup.html'
-    form_template = 'workbook/signup_form.html'
+    form_template = 'signup_form.html'
     form_class = WorkbookSubscriberForm
     success_url = reverse_lazy("workbook_confirmation")
     already_msg = "Você já está cadastrado(a)"
