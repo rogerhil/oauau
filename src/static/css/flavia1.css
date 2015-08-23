@@ -751,11 +751,28 @@ img.ajax-loader {
     margin-left: 0;
 }
 
+#site {
+    background-image: url(../img/sky.png);
+    background-repeat: repeat-x;
+}
+
+#oauau-image {
+    margin: 0 auto 50px auto;
+    width: 797px;
+    height: 382px;
+    background-image: url(../img/oauau-medium-transp.jpg);
+
+}
+
+#oauau-image:hover {
+    *background-image: url(../img/oauau-medium-transp.jpg);
+}
+
 footer {
-    background-color: #880b1c;
-    background-image: url(../img/black-dot.png);
+    background-color: #000;
+    *background-image: url(../img/black-dot.png);
     color: #eee;
-    border-top: 5px solid #111;
+    border-top: 1px solid #ccc;
     width:100%;
 	height:300px;
 	position:absolute;
@@ -764,7 +781,7 @@ footer {
 }
 
 footer a {
-     color: yellow;
+     color: #aa2222;
 }
 
 #site {
