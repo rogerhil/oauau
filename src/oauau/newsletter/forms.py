@@ -8,7 +8,7 @@ from .client import EmailMarketing, AlreadySubscribedError
 from .models import Subscriber, List, Subscription
 
 
-BASE_URL = 'http://www.oauau.com'
+BASE_URL = 'http://www.oauau.com.br'
 
 
 class BaseSubscriberForm(forms.Form):

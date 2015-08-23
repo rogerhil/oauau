@@ -30,7 +30,7 @@ $(window).load(function () {
                         }
                         return;
                     }
-                    $("#form-subscriber").html('<h2 style="color: green">Uma mensagem foi enviada para o email ' + email + '.</h2>');
+                    $("#form-subscriber").html('<h2 style="color: #A50017">Uma mensagem foi enviada para o email ' + email + '.</h2>');
                     $("#form-subscriber").effect('highlight', 2000, function () {
                         $("#form-subscriber").effect('highlight', 2000);
                     });
