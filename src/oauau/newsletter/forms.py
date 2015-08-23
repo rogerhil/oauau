@@ -56,9 +56,9 @@ class BaseSubscriberForm(forms.Form):
         Subscription.objects.get_or_create(list=slist, subscriber=subscriber)
 
 
-class SubscriberForm(BaseSubscriberForm):
+class WorkbookSubscriberForm(BaseSubscriberForm):
 
-    subject = "Confirme seu e-mail para baixar o livro de atividades do au au"
+    subject = "Confirme seu email para baixar o livro de atividades do au au"
     body = "Olá %s, \n\n" \
         "Clique no link abaixo para fazer o download do livro de atividades " \
         "do au au.\n\n" \
@@ -69,7 +69,21 @@ class SubscriberForm(BaseSubscriberForm):
 
     confirmation_url = '%s/livro-de-atividades/download/?s=%%s' % BASE_URL
 
-    list_id = settings.MADMIMI_NEWSLETTER_LIST_ID
-    name = settings.MADMIMI_NEWSLETTER_LIST_NAME
+    list_id = settings.MAILCHIMP_WORKBOOK_LIST_ID
+    name = settings.MAILCHIMP_WORKBOOK_LIST_NAME
 
 
+class LaunchSubscriberForm(BaseSubscriberForm):
+
+    subject = "Confirme seu email"
+    body = "Olá %s, \n\n" \
+        "Confirme seu email clicando no link abaixo para ser o primeiro a " \
+        "saber quando o livro do au au for lançado\n\n" \
+        "%s\n\n"\
+        "Obrigada,\n\n" \
+        "Flavia Bernardes e o au au"
+
+    confirmation_url = '%s/confirmacao/?s=%%s' % BASE_URL
+
+    list_id = settings.MAILCHIMP_LAUNCH_LIST_ID
+    name = settings.MAILCHIMP_LAUNCH_LIST_NAME

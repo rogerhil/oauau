@@ -75,6 +75,10 @@
         <!-- jQuery -->
         <script src="{% static 'js/jquery.min.js' %}"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <script>
+            var img = new Image();
+            img.src = '{% static 'img/ajax-loader.png' %}';
+        </script>
         {% block bottomjs %}
         {% endblock %}
     </body>

@@ -78,9 +78,11 @@ class EmailMarketing(object):
     def subscribe(self, email, list_id, **kwargs):
         if self.is_mailchimp():
             try:
-                self.client.lists.subscribe(list_id, dict(email=email), kwargs)
+                self.client.lists.subscribe(list_id, dict(email=email), kwargs,
+                                            double_optin=False)
             except ListAlreadySubscribedError as err:
-                raise AlreadySubscribedError(str(err))
+                pass
+                #raise AlreadySubscribedError(str(err))
         elif self.is_madmimi():
             contact = (kwargs.get('first_name'), kwargs.get('last_name'),
                        email, list_id)

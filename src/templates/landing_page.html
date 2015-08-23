@@ -13,11 +13,19 @@
         <h2>lançamento do livro do au au</h2>
         <br>
         <br>
+
+        <p>Se inscreva abaixo para receber o livro do au au de graça assim que for lançado</p>
+        <form id="form-subscriber" action="{% url 'landing_page' %}" method="post">
+            {% include "signup_form.html" %}
+        </form>
+        <br>
+        <br>
     </div>
 {% endblock %}
 
 {% block bottomjs %}
     {% include "logo-animated.html" %}
+    <script src="{% static 'js/newsletter.js' %}"></script>
 
     <script type="text/javascript">var switchTo5x=true;</script>
     <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>

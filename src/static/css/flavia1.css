@@ -50,7 +50,7 @@ body {
 }
 
 a {
-    color:#789;
+    color: #A50017;
     text-decoration: underline;
 }
 
@@ -62,7 +62,7 @@ a, btn, button {
 }
 
 a:hover, a:focus {
-    color:#999;
+    color: #d50017;
 }
 
 img {

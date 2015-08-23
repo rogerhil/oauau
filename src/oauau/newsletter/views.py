@@ -1,12 +1,12 @@
 # -*- coding: <nome da codificação> -*-
 
 from django.http import HttpResponseRedirect
-from django.core.urlresolvers import reverse
+from django.core.urlresolvers import reverse, reverse_lazy
 from django.views.generic import TemplateView
 
 from ..utils import JsonFormView
 from .client import AlreadySubscribedError
-from .forms import SubscriberForm
+from .forms import WorkbookSubscriberForm, LaunchSubscriberForm
 from .models import Subscriber
 
 
@@ -43,28 +43,28 @@ class NewsletterConfirmationBaseView(TemplateView):
                                                                *args, **kwargs)
 
 
-class LandPageView(NewsletterBaseView):
-    template_name = 'landpage.html'
-    form_template = 'landingpage_form.html'
-    form_class = SubscriberForm
-    success_url = '/'
-    redirect_name = 'landpage'
+class LandingPageView(NewsletterBaseView):
+    template_name = 'landing_page.html'
+    form_template = 'signup_form.html'
+    form_class = LaunchSubscriberForm
+    success_url = reverse_lazy("launch_confirmation")
+    redirect_name = 'landing_page'
 
 
-class ConfirmationView(NewsletterConfirmationBaseView):
-    template_name = 'confirmation.html'
-    subscription_form_class = SubscriberForm
+class LaunchConfirmationView(NewsletterConfirmationBaseView):
+    template_name = 'launch_confirmation.html'
+    subscription_form_class = LaunchSubscriberForm
 
 
 class WorkbookView(NewsletterBaseView):
     template_name = 'workbook/signup.html'
     form_template = 'workbook/signup_form.html'
-    form_class = SubscriberForm
-    success_url = '/'
+    form_class = WorkbookSubscriberForm
+    success_url = reverse_lazy("workbook_confirmation")
     already_msg = "Você já está cadastrado(a)"
 
 
 class WorkbookConfirmationView(NewsletterConfirmationBaseView):
     template_name = 'workbook/signup_confirmation.html'
     redirect_name = 'workbook'
-    subscription_form_class = SubscriberForm
+    subscription_form_class = WorkbookSubscriberForm

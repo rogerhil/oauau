@@ -17,12 +17,14 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.views.generic import TemplateView
 
-from .newsletter.views import WorkbookView, WorkbookConfirmationView
+from .newsletter.views import WorkbookView, WorkbookConfirmationView, \
+                              LandingPageView, LaunchConfirmationView
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', TemplateView.as_view(template_name="home.html"),
-        name='home'),
+    url(r'^$', LandingPageView.as_view(), name='landing_page'),
+    url(r'^confirmacao/$', LaunchConfirmationView.as_view(),
+        name='launch_confirmation'),
     url(r'^livro-de-atividades/$', WorkbookView.as_view(), name='workbook'),
     url(r'^livro-de-atividades/download/$', WorkbookConfirmationView.as_view(),
         name='workbook_confirmation'),
