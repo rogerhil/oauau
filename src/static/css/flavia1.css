@@ -122,12 +122,18 @@ h1 a, h1 a:hover,  h1 a:focus,
     text-decoration: none;
 }
 
-h2 {
+.landing-page {
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.landing-page h2 {
     font-size: 35px;
     margin-bottom: 20px;
 }
 
-h3 {
+.landing-page h3 {
     line-height: 1.5;
 }
 
@@ -627,13 +633,13 @@ img.ajax-loader {
 }
 
 #form-subscriber .errorlist li {
-    width: 50%;
+    width: 100%;
     margin: 0 auto;
     padding: 0;
 }
 
 #form-subscriber .non-field-errors {
-    width: 50%;
+    width: 100%;
     color: white;
     background-color: #A50017;
     margin: 0 auto 20px auto;
@@ -643,7 +649,7 @@ img.ajax-loader {
 }
 
 #form-subscriber input {
-    width: 50%;
+    width: 100%;
     color: #000;
     font-weight: bold !important;
     padding: 10px 20px;
@@ -654,12 +660,12 @@ img.ajax-loader {
 }
 
 #form-subscriber input.half {
-    width: calc(25% - 10px);
+    width: calc(50% - 10px);
     margin-right: 15px;
 }
 
 #form-subscriber input.last {
-    width: calc(25% - 10px);
+    width: calc(50% - 10px);
     margin-right: 0px;
 }
 
@@ -667,7 +673,7 @@ img.ajax-loader {
 #form-subscriber button {
     background: #aaa;
     padding: 10px 20px;
-    width: 50%;
+    width: 100%;
     text-transform: lowercase;
     font-weight: bold;
     border: 2px solid #aaa;
@@ -824,11 +830,10 @@ img.ajax-loader {
 
 #oauau-image {
     cursor: pointer;
+    width: 100%;
 }
 
 footer {
-    *background-color: #000;
-    *background-image: url(../img/black-dot.png);
     color: #555;
     border-top: 4px dashed #eee;
     width:100%;
@@ -848,7 +853,7 @@ footer a {
 }
 
 #container {
-    padding-bottom: 300px !important;
+    padding-bottom: 300px;
 }
 
 footer,
@@ -903,87 +908,51 @@ footer,
     padding-right: 0;
 }
 
-@media (max-width: 100px) {
-    #oauau-image {
-        width: 80px !important;
-    }
-}
-
-@media (max-width: 200px) {
-    #oauau-image {
-        width: 150px !important;
-    }
-}
-
-@media (max-width: 300px) {
-    #oauau-image {
-        width: 250px !important;
-    }
-}
-
-@media (max-width: 400px) {
-    #oauau-image {
-        width: 350px !important;
-    }
-}
 
 @media (max-width: 500px) {
 
-    .social-64 {
-        width: 156px;
-        margin: 0 auto;
+    .landing-page {
+        width: 90%;
     }
-
-    .social-64 li {
-        width: 32px;
-        height: 32px;
+    footer .rights {
         display: block;
     }
-
-    .social-64 li.facebook {
-        background: url(../img/social/facebook-32.png)
+    footer {
+        height:250px;
+        padding: 25px 0;
+    }
+    #container {
+        padding-bottom: 220px !important;
     }
 
-    .social-64 li.twitter {
-        background: url(../img/social/twitter-32.png)
-    }
 
-    .social-64 li.pinterest {
-        background: url(../img/social/pinterest-32.png)
-    }
-
-    .social-64 li.instagram {
-        background: url(../img/social/instagram-32.png)
-    }
-
-    .social-64 li.youtube {
-        background: url(../img/social/youtube-32.png)
-    }
-
-    .social-64 li.gplus {
-        background: url(../img/social/gplus-32.png)
-    }
 
     #form-subscriber input,
     #form-subscriber input.half,
+    #form-subscriber input.last,
     #form-subscriber button {
-        width: 90%;
-        margin-right: 0;
+        margin-right: 0 !important;
+        width: 100% !important;
+        font-size: 15px;
+        margin-bottom: 10px;
+        padding: 5px 20px;
+        border-radius: 15px;
     }
-    #form-subscriber .errorlist li {
-        width: 90%;
+    #form-subscriber button {
+        font-size: 25px;
     }
-    #form-subscriber .non-field-errors {
-        width: 90%;
+    .special-title,
+    .special-title-bold {
+        font-size: 70px !important;
     }
-    .landing-page .body {
-        width: 90%;
+    .landing-page h2 {
+        font-size: 22px !important;
     }
-    .landing-page .title {
-        font-size: 65px;
+    .landing-page h3 {
+        font-size: 16px !important;
     }
-    #oauau-image {
-        width: 400px;
+    footer p {
+        font-size: 15px;
     }
 }
 
@@ -1006,26 +975,19 @@ footer,
         text-align: center;
     }
 
+    .landing-page {
+        width: 90%;
+    }
+
     #form-subscriber input,
     #form-subscriber input.half,
+    #form-subscriber input.last,
     #form-subscriber button {
-        width: 80%;
-        margin-right: 0;
+        margin-right: 0 !important;
+        width: 100% !important;
     }
-    #form-subscriber .errorlist li {
-        width: 80%;
-    }
-    #form-subscriber .non-field-errors {
-        width: 80%;
-    }
-    .landing-page .body {
-        width: 80%;
-    }
-    .landing-page .title {
-        font-size: 80px;
-    }
-    #oauau-image {
-        width: 500px;
+    footer .rights {
+        display: block;
     }
 }
 
@@ -1049,24 +1011,10 @@ footer,
         padding-top: 30px;
     }
 
-    #form-subscriber input,
-    #form-subscriber button,
-    #form-subscriber input.half {
-        width: 60%;
-        margin-right: 0;
+    .landing-page {
+        width: 80%;
     }
-    #form-subscriber .errorlist li {
-        width: 60%;
-    }
-    #form-subscriber .non-field-errors {
-        width: 60%;
-    }
-    .landing-page .body {
-        width: 60%;
-    }
-    #oauau-image {
-        width: 650px;
-    }
+
 
 }
 
@@ -1096,38 +1044,32 @@ footer,
 
     #form-subscriber input,
     #form-subscriber button {
-        width: 60%;
         margin-right: 0;
     }
+
+    .landing-page {
+        width: 70%;
+    }
+
     #form-subscriber input.half {
-        width: calc(30% - 10px);
         margin-right: 15px;
     }
     #form-subscriber input.last {
-        width: calc(30% - 10px);
         margin-right: 0px;
     }
-    #form-subscriber .errorlist li {
-        width: 60%;
-    }
-    #form-subscriber .non-field-errors {
-        width: 60%;
-    }
-    .landing-page .body {
-        width: 60%;
-    }
-    #oauau-image {
-        width: 700px;
-    }
+
 
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1440px) and (min-width: 1200px) {
     h2 {
         font-size: 25px;
     }
     h3 {
         font-size: 20px;
+    }
+    .landing-page {
+        width: 60%;
     }
 }
 
