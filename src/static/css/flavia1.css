@@ -651,7 +651,6 @@ img.ajax-loader {
 #form-subscriber input {
     width: 100%;
     color: #000;
-    font-weight: bold !important;
     padding: 10px 20px;
     background: rgba(255,255,255,0.0);
     border: 2px solid #000;
