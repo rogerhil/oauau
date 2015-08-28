@@ -835,9 +835,9 @@ img.ajax-loader {
 
 footer {
     color: #555;
-    border-top: 4px dashed #eee;
-    width:100%;
-	height:900px;
+    *border-top: 4px dashed #eee;
+    width: 100%;
+	height: 420px;
 	*position:absolute;
 	*bottom:0;
 	*left:0;
@@ -921,11 +921,11 @@ footer,
         display: block;
     }
     footer {
-        height:250px;
+        *height:250px;
         padding: 25px 0;
     }
     #container {
-        padding-bottom: 220px !important;
+        *padding-bottom: 220px !important;
     }
 
 

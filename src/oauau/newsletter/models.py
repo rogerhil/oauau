@@ -26,5 +26,8 @@ class Subscription(models.Model):
     list = models.ForeignKey(List)
     subscriber = models.ForeignKey(Subscriber)
 
+    class Meta:
+        unique_together = (('list', 'subscriber'),)
+
     def __str__(self):
         return "%s (%s)" % (self.subscriber, self.list)
