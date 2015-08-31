@@ -4,11 +4,15 @@ from madmimi import MadMimi
 from django.conf import settings
 
 
-class AlreadySubscribedError(Exception):
+class AlreadyRegisteredError(Exception):
 
     def __init__(self, message, uuid, *args, **kwargs):
         super(Exception, self).__init__(message, *args, **kwargs)
         self.uuid = uuid
+
+
+class AlreadySubscribedError(AlreadyRegisteredError):
+    pass
 
 
 class EmailMarketing(object):

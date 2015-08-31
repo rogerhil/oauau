@@ -1038,7 +1038,7 @@ footer,
     h3 {
         font-size: 20px;
     }
-}   
+}
 
 @media (min-width: 3500px) and  (max-width: 6000px) {
     #form-subscriber input.half {

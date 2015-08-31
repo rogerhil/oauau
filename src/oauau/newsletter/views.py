@@ -5,7 +5,7 @@ from django.core.urlresolvers import reverse, reverse_lazy
 from django.views.generic import TemplateView
 
 from ..utils import JsonFormView
-from .client import AlreadySubscribedError
+from .client import AlreadyRegisteredError, AlreadySubscribedError
 from .forms import WorkbookSubscriberForm, LaunchSubscriberForm
 from .models import Subscriber
 
@@ -14,14 +14,18 @@ class NewsletterBaseView(JsonFormView):
 
     already_msg = "You are already subscribed to my newsletter."
 
-    def form_valid(self, form):
+    def form_valid(self, form, extra_data=None):
         try:
             subscriber = form.pre_subscribe_locally()
             form.send_confirmation(subscriber)
         except AlreadySubscribedError as err:
-            form.errors['__all__'] = self.already_msg
-            extra_data = {'s': err.uuid, 'redirect_url': str(self.success_url)}
-            return self.form_invalid(form, extra_data=extra_data)
+            extra_data = {'s': err.uuid, 'subs': True}
+            return super(NewsletterBaseView, self).form_valid(form,
+                                                         extra_data=extra_data)
+        except AlreadyRegisteredError as err:
+            extra_data = {'s': err.uuid}
+            return super(NewsletterBaseView, self).form_valid(form,
+                                                         extra_data=extra_data)
         return super(NewsletterBaseView, self).form_valid(form)
 
 
@@ -39,7 +43,8 @@ class NewsletterConfirmationBaseView(TemplateView):
         except Subscriber.DoesNotExist:
             return HttpResponseRedirect(reverse(self.redirect_name))
         form = self.subscription_form_class()
-        form.subscribe(subscriber)
+        if not request.GET.get("subs") or not form.is_subscribed(subscriber):
+            form.subscribe(subscriber)
         return super(NewsletterConfirmationBaseView, self).dispatch(request,
                                                                *args, **kwargs)
 

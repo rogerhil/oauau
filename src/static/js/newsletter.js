@@ -3,7 +3,6 @@ $(window).load(function () {
         $('object').remove();
     }, 500);
 
-    //$("#form-subscriber input[name=email]").focus();
     $("#form-subscriber").submit(function (e) {
         e.preventDefault();
         var email = $(this).find('input[name=email]').val();
@@ -25,12 +24,20 @@ $(window).load(function () {
                         $('#form-subscriber').html(data.html);
                         $('#form-subscriber .errorlist').hide().slideDown();
                         $('#form-subscriber .non-field-errors').hide().slideDown();
-                        if ($('#form-subscriber .non-field-errors').html()) {
-                            window.location = data.redirect_url + '?s=' + data.s;
-                        }
                         return;
                     }
-                    $("#form-subscriber").html('<h2 style="color: #A50017">Uma mensagem foi enviada para o email ' + email + '.</h2>');
+                    var msg;
+                    if (data.s) {
+                        var url = data.success_url + '?s=' + data.s;
+                        if (data.subs) {
+                            url += "&subs=1";
+                        }
+                        window.location = url;
+                        msg = 'Redirecionando';
+                    } else {
+                        msg = 'Uma mensagem foi enviada para o email ' + email;
+                    }
+                    $("#form-subscriber").html('<h2 style="color: #A50017">' + msg + '.</h2>').css('padding', '5px');
                     $("#form-subscriber").effect('highlight', 2000, function () {
                         $("#form-subscriber").effect('highlight', 2000);
                     });

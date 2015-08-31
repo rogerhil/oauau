@@ -15,8 +15,12 @@ class Subscriber(models.Model):
 
 
 class List(models.Model):
+    provider = models.CharField(max_length=32)
     list_id = models.CharField(max_length=128, unique=True)
     name = models.CharField(max_length=128)
+
+    class Meta:
+        unique_together = (('provider', 'list_id', 'name'),)
 
     def __str__(self):
         return "%s (%s)" % (self.name, self.list_id)

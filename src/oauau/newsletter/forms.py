@@ -4,7 +4,8 @@ from django.conf import settings
 from django import forms
 from django.core.mail import send_mail
 
-from .client import EmailMarketing, AlreadySubscribedError
+from .client import EmailMarketing, AlreadySubscribedError, \
+                    AlreadyRegisteredError
 from .models import Subscriber, List, Subscription
 
 
@@ -30,6 +31,9 @@ class BaseSubscriberForm(forms.Form):
                          .filter(list__list_id=self.list_id).count():
                 raise AlreadySubscribedError('User %s is already subscribed.'
                                              % data['email'], subscriber.uuid)
+            elif subscriber.subscription_set.all().count():
+                raise AlreadyRegisteredError('User %s is already registered.'
+                                             % data['email'], subscriber.uuid)
         except Subscriber.DoesNotExist:
             subscriber = Subscriber.objects.get_or_create(**data)[0]
         return subscriber
@@ -52,13 +56,18 @@ class BaseSubscriberForm(forms.Form):
         client.subscribe(email, self.list_id, first_name=subscriber.first_name,
                         last_name=subscriber.last_name)
         list_id, list_name = self.list_id, self.name
-        slist = List.objects.get_or_create(list_id=list_id, name=list_name)[0]
+        slist = List.objects.get_or_create(list_id=list_id, name=list_name,
+                         provider=settings.CURRENT_EMAIL_MARKETING_PROVIDER)[0]
         Subscription.objects.get_or_create(list=slist, subscriber=subscriber)
+
+    def is_subscribed(self, subscriber):
+        return Subscription.objects.filter(list__list_id=self.list_id,
+                                           subscriber=subscriber).exists()
 
 
 class WorkbookSubscriberForm(BaseSubscriberForm):
 
-    subject = "Confirme seu email para baixar o livro de atividades do au au"
+    subject = "Confirme seu email"
     body = "Olá %s, \n\n" \
         "Clique no link abaixo para fazer o download do livro de atividades " \
         "do au au.\n\n" \
@@ -78,7 +87,7 @@ class LaunchSubscriberForm(BaseSubscriberForm):
     subject = "Confirme seu email"
     body = "Olá %s, \n\n" \
         "Confirme seu email clicando no link abaixo para ser o primeiro a " \
-        "saber quando o livro do au au for lançado\n\n" \
+        "saber quando o livro do au au for lançado.\n\n" \
         "%s\n\n"\
         "Caso o link acima esteja inativo, copie e cole no seu browser.\n\n" \
         "Obrigada,\n\n" \
