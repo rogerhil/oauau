@@ -11,7 +11,7 @@
 @font-face {
 	font-family: 'gothic';
 	src: url('../font/gothic.eot');
-	src: local('../font/gothic'), url('../font/gothic.woff') format('woff'), url('../font/gothic.ttf') format('truetype');
+	src: local('../font/gothic'), url('../font/gothic.ttf') format('truetype');
 }
 /* use this class to attach this font to any element i.e. <p class="fontsforweb_fontid_9785">Text with this font applied</p> */
 .fontsforweb_fontid_9785 {

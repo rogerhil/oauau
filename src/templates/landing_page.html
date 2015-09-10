@@ -14,13 +14,13 @@
         <form id="form-subscriber" action="{% url 'landing_page' %}" method="post">
             {% include "signup_form.html" %}
         </form>
-        <script src="{% static 'js/newsletter.js' %}"></script>
         <br>
     </div>
 {% endblock %}
 
 {% block bottomjs %}
     {% include "logo-animated.html" %}
+    <script async src="{% static 'js/newsletter.js' %}"></script>
     <script type="text/javascript">var switchTo5x=true;</script>
     <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
     <script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>

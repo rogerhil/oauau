@@ -19,9 +19,12 @@
         <form id="form-subscriber" action="{% url 'workbook' %}" method="post">
             {% include "signup_form.html" %}
         </form>
-        <script src="{% static 'js/newsletter.js' %}"></script>
         <br>
         <br>
     </div>
 {% endblock %}
 
+
+{% block bottomjs %}
+    <script async src="{% static 'js/newsletter.js' %}"></script>
+{% endblock %}
