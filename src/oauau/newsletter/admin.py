@@ -8,13 +8,16 @@ class SubscriptionAdmin(admin.ModelAdmin):
 
     def list_name(self, obj):
         return obj.list.name
+    list_name.admin_order_field = 'list__name'
 
     def list_ident(self, obj):
         return obj.list.list_id
     list_ident.short_description = 'List id'
+    list_ident.admin_order_field = 'list__id'
 
     def provider(self, obj):
         return obj.list.provider
+    provider.admin_order_field = 'list__provider'
 
 
 @admin.register(Subscriber)
