@@ -1,0 +1,187 @@
+@media (max-width: 500px) {
+
+    .landing-page {
+        width: 90%;
+    }
+    footer .rights {
+        display: block;
+    }
+    footer {
+        *height:250px;
+        padding: 25px 0;
+    }
+    #container {
+        *padding-bottom: 220px !important;
+    }
+
+
+
+    #form-subscriber input,
+    #form-subscriber input.half,
+    #form-subscriber input.last,
+    #form-subscriber button {
+        margin-right: 0 !important;
+        width: 100% !important;
+        font-size: 15px;
+        margin-bottom: 10px;
+        padding: 5px 20px;
+        border-radius: 15px;
+    }
+    #form-subscriber button {
+        font-size: 25px;
+    }
+    .special-title,
+    .special-title-bold {
+        font-size: 70px !important;
+    }
+    .landing-page h2 {
+        font-size: 22px !important;
+    }
+    .landing-page h3 {
+        font-size: 16px !important;
+    }
+    footer p {
+        font-size: 15px;
+    }
+}
+
+
+@media (max-width: 768px) and (min-width: 500px) {
+    body {
+        line-height: 1.7;
+    }
+    h1, .heading {
+        font-size: 35px;
+    }
+    a.border-button {
+        font-size: 16px;
+        padding: 10px 30px;
+        margin-top: 20px;
+    }
+    .about-grid,
+    .services,
+    .case-study {
+        text-align: center;
+    }
+
+    .landing-page {
+        width: 90%;
+    }
+
+    #form-subscriber input,
+    #form-subscriber input.half,
+    #form-subscriber input.last,
+    #form-subscriber button {
+        margin-right: 0 !important;
+        width: 100% !important;
+    }
+    footer .rights {
+        display: block;
+    }
+}
+
+@media (max-width: 992px) and (min-width: 768px) {
+    #contactForm {
+        max-width: 450px;
+        margin: 0 auto;
+    }
+
+    .call-to-action .carousel-caption,
+    .call-to-action .carousel-indicators {
+        text-align: center;
+        width: 100%;
+    }
+
+    .text-vertical,
+    footer {
+        text-align: center;
+    }
+    .scroll-btn {
+        padding-top: 30px;
+    }
+
+    .landing-page {
+        width: 80%;
+    }
+
+
+}
+
+@media (max-width: 1200px) and (min-width: 992px) {
+    .no-pad-right {
+        padding-right: 15px;
+    }
+    #testimonials {
+        height: 620px;
+    }
+
+    .services,
+    .about,
+    .case-study,
+    footer,
+    .overlay,
+    .head,
+    .thankyou .text-vertical,
+    #testimonials,
+    .call-to-action {
+        padding: 60px 0;
+    }
+
+    #contactForm {
+        padding: 15px;
+    }
+
+    #form-subscriber input,
+    #form-subscriber button {
+        margin-right: 0;
+    }
+
+    .landing-page {
+        width: 70%;
+    }
+
+    #form-subscriber input.half {
+        margin-right: 15px;
+    }
+    #form-subscriber input.last {
+        margin-right: 0px;
+    }
+
+
+}
+
+@media (max-width: 1440px) and (min-width: 1200px) {
+    h2 {
+        font-size: 25px;
+    }
+    h3 {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 3500px) and  (max-width: 6000px) {
+    #form-subscriber input.half {
+        width: calc(50% - 13px);
+    }
+
+    #form-subscriber input.last {
+        width: calc(50% - 13px);
+    }
+    .landing-page {
+        width: 40%;
+    }
+}
+
+
+@media (min-width: 6000px) {
+    #form-subscriber input.half {
+        width: calc(50% - 13px);
+    }
+
+    #form-subscriber input.last {
+        width: calc(50% - 13px);
+    }
+    .landing-page {
+        width: 35%;
+    }
+}
