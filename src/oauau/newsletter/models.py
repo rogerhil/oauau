@@ -11,7 +11,11 @@ class Subscriber(models.Model):
     last_name = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
-        return self.first_name or self.email.split('@')[0]
+        return self.full_name or self.email.split('@')[0]
+
+    @property
+    def full_name(self):
+        return ("%s %s" % (self.first_name, self.last_name)).strip()
 
 
 class List(models.Model):
