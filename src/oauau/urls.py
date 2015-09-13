@@ -25,8 +25,8 @@ urlpatterns = [
     url(r'^$', LandingPageView.as_view(), name='landing_page'),
     url(r'^confirmacao/$', LaunchConfirmationView.as_view(),
         name='launch_confirmation'),
-    url(r'^livro-de-atividades/$', WorkbookView.as_view(), name='workbook'),
-    url(r'^livro-de-atividades/download/$', WorkbookConfirmationView.as_view(),
-        name='workbook_confirmation'),
-
+    url(r'^livro-de-atividades-vogais/$',
+        WorkbookView.as_view(), name='workbook'),
+    url(r'^livro-de-atividades-vogais/download/$',
+        WorkbookConfirmationView.as_view(), name='workbook_confirmation'),
 ]
