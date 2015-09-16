@@ -31,11 +31,11 @@ $(window).ready(function () {
                         window.location = url;
                         msg = 'Redirecionando';
                     } else {
-                        msg = 'Uma mensagem foi enviada para o email ' + email;
+                        msg = 'Uma mensagem foi enviada para o email ' + email + '.<br><br> Caso não tenha recebido, verifique sua pasta spam ou sua pasta de promoções (do gmail) - emails podem ir para lugares estranhos...';
                     }
-                    $("#form-subscriber").html('<h2 style="color: #A50017">' + msg + '.</h2>').css('padding', '5px');
-                    $("#form-subscriber").effect('highlight', 2000, function () {
-                        $("#form-subscriber").effect('highlight', 2000);
+                    $("#content").html('<h2 style="color: #A50017">' + msg + '.</h2>').css('padding', '5px');
+                    $("#content").effect('highlight', 2000, function () {
+                        $("#content").effect('highlight', 2000);
                     });
                 });
             }

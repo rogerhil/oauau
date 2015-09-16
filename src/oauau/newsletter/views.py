@@ -6,7 +6,7 @@ from django.views.generic import TemplateView
 
 from ..utils import JsonFormView
 from .client import AlreadyRegisteredError, AlreadySubscribedError
-from .forms import WorkbookSubscriberForm, LaunchSubscriberForm
+from .forms import WorkbookSubscriberForm, Promotion5DaysSubscriberForm
 from .models import Subscriber
 
 
@@ -52,15 +52,15 @@ class NewsletterConfirmationBaseView(TemplateView):
 class LandingPageView(NewsletterBaseView):
     template_name = 'landing_page.html'
     form_template = 'signup_form.html'
-    form_class = LaunchSubscriberForm
+    form_class = Promotion5DaysSubscriberForm
     success_url = reverse_lazy("launch_confirmation")
     already_msg = "Você já está cadastrado(a)"
 
 
 class LaunchConfirmationView(NewsletterConfirmationBaseView):
-    template_name = 'launch_confirmation.html'
+    template_name = 'promotion_5_days_confirmation.html'
     redirect_name = 'landing_page'
-    subscription_form_class = LaunchSubscriberForm
+    subscription_form_class = Promotion5DaysSubscriberForm
 
 
 class WorkbookView(NewsletterBaseView):
