@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block container %}
+    <div class="landing-page">
+        <div style="margin-bottom: 50px; padding-top: 20px;">
+            <img src="{% static 'img/workbook-page.png' %}" id="oauau-image" />
+        </div>
+
+        <h1 class="special-title-bold">Oba!</h1>
+        <h2>Seu cadastro foi confirmado com sucesso!</h2>
+        <h3>
+            Você será sempre o primeiro a saber de novos jogos, vídeos e atividades divertidas.
+        </h3>
+        <h3>
+            Quer ler a historinha do au au? Clique no link abaixo para ter
+            acesso ao livro, mas não demore! O livro está disponível
+            gratuitamente, por tempo <strong>limitado</strong>...
+        </h3>
+        <h3>
+            <a target="_blank" href="http://bit.ly/oauaulivro">Livro do au au</a>
+        </h3>
+        <br>
+    </div>
+{% endblock %}
+

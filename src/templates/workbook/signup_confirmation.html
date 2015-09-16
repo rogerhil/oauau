@@ -1,10 +1,14 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
+{% block title %}O au au | Livro de Atividades{% endblock %}
+{% block ogtitle %}Já baixou o seu livro do au au?{% endblock %}
+{% block ogdescription %}Ele está gratuito na Amazon http://bit.ly/oauaulivro. Baixe o seu e receba de brinde o livro de atividades.{% endblock %}
+
 {% block container %}
     <div class="landing-page">
         <div style="margin-bottom: 30px; padding-top: 20px;">
-            <img src="{% static 'img/workbook-page.png' %}" id="oauau-image" />
+            <img src="{% static 'img/workbook-confirmation-page.png' %}" id="oauau-image" />
         </div>
         <h1 class="special-title-bold">Obrigada!</h1>
         <h3>

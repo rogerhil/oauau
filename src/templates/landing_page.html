@@ -6,14 +6,26 @@
         <div style="margin-bottom: 30px; padding-top: 20px;">
             <img src="{% static 'img/oauau-medium-transp-open.png' %}" id="oauau-image" />
         </div>
-        <h1 class="special-title">
-            <span class="special-title-bold">Em breve</span><br>
-        </h1>
-        <h2>lançamento do livro do au au</h2>
-        <h3>Se inscreva abaixo para receber o livro do au au grátis assim que for lançado.</h3>
-        <form id="form-subscriber" action="{% url 'landing_page' %}" method="post">
-            {% include "signup_form.html" %}
-        </form>
+        <div id="content">
+            <h1 class="special-title">
+                <span class="special-title-bold">Oba!</span><br>
+            </h1>
+            <h2>O livro do au au já foi lançado!</h2>
+            <h3>Ainda não conhece o au au?<br>Coloque suas informações abaixo para ter acesso ao livro!</h3>
+            <form id="form-subscriber" action="{% url 'landing_page' %}" method="post">
+                {% include "signup_form.html" %}
+            </form>
+            <br>
+            <p>
+                P.S.: Em breve novas brincadeiras, joguinhos e vídeos divertidos no site do au au!
+            </p>
+            <p>
+                P.P.S: Já viu o vídeo da historinha do au au? Clique no link abaixo para assistir:
+            </p>
+            <p>
+                <a href="https://www.youtube.com/watch?v=TdH9zM2O5qo">Vídeo da historinha do au au</a>
+            </p>
+        </div>
         <br>
     </div>
 {% endblock %}

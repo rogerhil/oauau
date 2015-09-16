@@ -3,22 +3,24 @@
 
 {% block title %}O au au | Livro de Atividades{% endblock %}
 {% block ogtitle %}Já baixou o seu livro do au au?{% endblock %}
-{% block ogdescription %}Ele está gratuito no (link do amazon). Baixe o seu e receba de brinde o livro de atividades.{% endblock %}
+{% block ogdescription %}Ele está gratuito na Amazon http://bit.ly/oauaulivro. Baixe o seu e receba de brinde o livro de atividades.{% endblock %}
 
 {% block container %}
     <div class="landing-page">
         <div style="margin-bottom: 30px;  padding-top: 20px;">
             <img src="{% static 'img/workbook-page.png' %}" id="oauau-image" />
         </div>
-        <h1 class="special-title-bold">
-            Olá,
-        </h1>
-        <h3>
-            Se inscreva abaixo para baixar o Livro de Atividades do au au
-        </h3>
-        <form id="form-subscriber" action="{% url 'workbook' %}" method="post">
-            {% include "signup_form.html" %}
-        </form>
+        <div id="content">
+            <h1 class="special-title-bold">
+                Olá,
+            </h1>
+            <h3>
+                Se inscreva abaixo para baixar o Livro de Atividades do au au
+            </h3>
+            <form id="form-subscriber" action="{% url 'workbook' %}" method="post">
+                {% include "signup_form.html" %}
+            </form>
+        </div>
         <br>
         <br>
     </div>
