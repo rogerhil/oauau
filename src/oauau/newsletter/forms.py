@@ -76,7 +76,8 @@ class WorkbookSubscriberForm(BaseSubscriberForm):
         "Obrigada,\n\n" \
         "Flavia Bernardes e o au au"
 
-    confirmation_url = '%s/livro-de-atividades/download/?s=%%s' % BASE_URL
+    confirmation_url = '%s/livro-de-atividades-vogais/download/?s=%%s' % \
+                       BASE_URL
 
     list_id = settings.MAILCHIMP_WORKBOOK_LIST_ID
     name = settings.MAILCHIMP_WORKBOOK_LIST_NAME
