@@ -7,9 +7,9 @@
 {% endif %}
 
 {{ form.errors.email }}
-<input type="email" name="email" value="" placeholder="e-mail" class="required" /><div></div>
+<input type="email" name="email" value="{{ form.data.email }}" placeholder="e-mail" class="required" /><div></div>
 {{ form.errors.first_name }}
-<input type="text" name="first_name" value="" placeholder="nome" class="required half" />
+<input type="text" name="first_name" value="{{ form.data.first_name }}" placeholder="nome" class="required half" />
 {{ form.errors.last_name }}
-<input type="text" name="last_name" value="" placeholder="sobrenome (opcional)" class="half last" /><div></div>
+<input type="text" name="last_name" value="{{ form.data.last_name }}" placeholder="sobrenome (opcional)" class="half last" /><div></div>
 <button disabled="disabled">Enviar</button>

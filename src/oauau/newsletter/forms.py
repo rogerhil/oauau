@@ -14,7 +14,7 @@ BASE_URL = 'http://www.oauau.com.br'
 
 class BaseSubscriberForm(forms.Form):
     email = forms.EmailField()
-    first_name = forms.CharField(max_length=255, required=False)
+    first_name = forms.CharField(max_length=255)
     last_name = forms.CharField(max_length=255, required=False)
 
     confirmation_url = '%s/confirmation/?s=%%s' % BASE_URL
@@ -53,8 +53,8 @@ class BaseSubscriberForm(forms.Form):
         #    pass
         #if settings.DEVELOPMENT:
         #    return
-        client.subscribe(email, self.list_id, first_name=subscriber.first_name,
-                        last_name=subscriber.last_name)
+        client.subscribe(email, self.list_id, fname=subscriber.first_name,
+                        lname=subscriber.last_name)
         list_id, list_name = self.list_id, self.name
         slist = List.objects.get_or_create(list_id=list_id, name=list_name,
                          provider=settings.CURRENT_EMAIL_MARKETING_PROVIDER)[0]
