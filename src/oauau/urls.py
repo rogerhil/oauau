@@ -15,14 +15,23 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.contrib.sitemaps.views import sitemap
 from django.views.generic import TemplateView
 
 from .newsletter.views import WorkbookView, WorkbookConfirmationView, \
                               LandingPageView, LaunchConfirmationView
+from .sitemap import OauauSitemap
+
+
+sitemaps = {
+    'static': OauauSitemap,
+}
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', LandingPageView.as_view(), name='landing_page'),
+    url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps},
+        name='django.contrib.sitemaps.views.sitemap'),
     url(r'^confirmacao/$', LaunchConfirmationView.as_view(),
         name='launch_confirmation'),
     url(r'^livro-de-atividades-vogais/$',
