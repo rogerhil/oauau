@@ -4,7 +4,8 @@ from .models import Subscription, Subscriber, List
 
 @admin.register(Subscription)
 class SubscriptionAdmin(admin.ModelAdmin):
-    list_display = ('subscriber', 'list_name', 'list_ident', 'provider')
+    list_display = ('subscriber', 'list_name', 'list_ident', 'joined',
+                    'provider')
     list_filter = ('list__name', 'list__provider')
     search_fields = ('subscriber__first_name', 'subscriber__last_name',
                      'subscriber__email')
@@ -25,7 +26,7 @@ class SubscriptionAdmin(admin.ModelAdmin):
 
 @admin.register(Subscriber)
 class SubscriberAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'email')
+    list_display = ('first_name', 'last_name', 'email', 'registered')
     search_fields = ('first_name', 'last_name', 'email')
 
 

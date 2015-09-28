@@ -9,6 +9,7 @@ class Subscriber(models.Model):
     email = models.EmailField(unique=True)
     first_name = models.CharField(max_length=255, blank=True, null=True)
     last_name = models.CharField(max_length=255, blank=True, null=True)
+    registered = models.DateTimeField(auto_now_add=True, null=True)
 
     def __str__(self):
         return self.full_name or self.email.split('@')[0]
@@ -33,6 +34,7 @@ class List(models.Model):
 class Subscription(models.Model):
     list = models.ForeignKey(List)
     subscriber = models.ForeignKey(Subscriber)
+    joined = models.DateTimeField(auto_now_add=True, null=True)
 
     class Meta:
         unique_together = (('list', 'subscriber'),)
