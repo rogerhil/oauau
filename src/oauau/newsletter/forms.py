@@ -117,4 +117,19 @@ class Promotion5DaysSubscriberForm(BaseSubscriberForm):
     name = settings.MAILCHIMP_PROMOTION_5_DAYS_LIST_NAME
 
 
+class LandingPageSubscriberForm(BaseSubscriberForm):
+
+    subject = "Confirme seu email"
+    body = "Olá %s, \n\n" \
+        "Você está recebendo esta mensagem porque se cadastrou no site do " \
+        "au au. Para confirmar o seu cadastro, clique no link abaixo:\n\n" \
+        "%s\n\n"\
+        "Caso o link acima esteja inativo, copie e cole no seu browser.\n\n" \
+        "Obrigada,\n\n" \
+        "Flavia Bernardes e o au au"
+
+    confirmation_url = '%s/confirmacao/?s=%%s' % BASE_URL
+
+    list_id = settings.MAILCHIMP_NEWSLETTER_LIST_ID
+    name = settings.MAILCHIMP_NEWSLETTER_LIST_NAME
 

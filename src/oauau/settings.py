@@ -98,8 +98,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-
 SITE_ID = 1
 
 # Static files (CSS, JavaScript, Images)
@@ -112,6 +110,12 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "media"),
 )
 
+ADMINS = (
+    ('Rogerio Hilbert', 'rogerhil@gmail.com'),
+)
+
+SERVER_EMAIL = 'support@oauau.com.br'
+
 MAILCHIMP_API_KEY = ''
 MAILCHIMP_WORKBOOK_LIST_ID = 'b595af5d99'
 MAILCHIMP_WORKBOOK_LIST_NAME = 'O Au Au - Livro de atividades 1'
@@ -122,6 +126,8 @@ MAILCHIMP_LAUNCH_LIST_NAME = 'O Au Au - Lançamento'
 MAILCHIMP_PROMOTION_5_DAYS_LIST_ID = 'bde4e35640'
 MAILCHIMP_PROMOTION_5_DAYS_LIST_NAME = 'O au au - Promoção 5 dias'
 
+MAILCHIMP_NEWSLETTER_LIST_ID = '49181cbabd'
+MAILCHIMP_NEWSLETTER_LIST_NAME = 'Newsletter'
 
 MADMIMI_USER = ''
 MADMIMI_API_KEY = ''
