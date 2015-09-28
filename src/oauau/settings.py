@@ -114,7 +114,7 @@ ADMINS = (
     ('Rogerio Hilbert', 'rogerhil@gmail.com'),
 )
 
-SERVER_EMAIL = 'support@oauau.com.br'
+SERVER_EMAIL = 'suporte@oauau.com.br'
 
 MAILCHIMP_API_KEY = ''
 MAILCHIMP_WORKBOOK_LIST_ID = 'b595af5d99'
