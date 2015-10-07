@@ -30,6 +30,8 @@ sitemaps = {
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', LandingPageView.as_view(), name='landing_page'),
+    url(r'^googlec22a1c650e0dd9ea.html$',
+        TemplateView.as_view(template_name='googlec22a1c650e0dd9ea.html')),
     url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps},
         name='django.contrib.sitemaps.views.sitemap'),
     url(r'^confirmacao/$', LaunchConfirmationView.as_view(),
