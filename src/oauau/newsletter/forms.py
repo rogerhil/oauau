@@ -122,7 +122,8 @@ class LandingPageSubscriberForm(BaseSubscriberForm):
     subject = "Confirme seu email"
     body = "Olá %s, \n\n" \
         "Você está recebendo esta mensagem porque se cadastrou no site do " \
-        "au au. Para confirmar o seu cadastro, clique no link abaixo:\n\n" \
+        "au au. Para confirmar o seu cadastro e baixar o calendário do au " \
+        "au, clique no link abaixo:\n\n" \
         "%s\n\n"\
         "Caso o link acima esteja inativo, copie e cole no seu browser.\n\n" \
         "Obrigada,\n\n" \

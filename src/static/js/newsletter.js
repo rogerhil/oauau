@@ -41,7 +41,7 @@ function newsletterSubmit(o, e) {
                     window.location = url;
                     msg = 'Redirecionando';
                 } else {
-                    msg = 'Tá quase lá! Uma mensagem foi enviada para o email ' + email + '. Clique nela para ter acesso ao livro do au au.<br><br> Caso não tenha recebido, verifique sua pasta spam ou sua pasta de promoções (do gmail) - emails podem ir para lugares estranhos...';
+                    msg = 'Tá quase lá! Uma mensagem foi enviada para o email ' + email + '. Clique nela para ter acesso ao calendário do au au.<br><br> Caso não tenha recebido, verifique sua pasta spam ou sua pasta de promoções (do gmail) - emails podem ir para lugares estranhos...';
                 }
                 $("#content").html('<h2 style="color: #A50017">' + msg + '.</h2>').css('padding', '5px');
                 $("#content").effect('highlight', 2000, function () {
